@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../Context/Context";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Axios from "axios";
 import SongDisplay from "./Utility Components/SongDisplay";
 import styles from "../Styles/Search.module.css";
 import stylesPlaylist from "../Styles/Playlist.module.css";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { RiPlayList2Fill } from "react-icons/ri";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 import getDuration from "../Utilities/getDuration";
 
 const ArtistPlaylist = () => {
@@ -17,8 +16,6 @@ const ArtistPlaylist = () => {
   const { accessToken } = useContext(Context);
   const [result, setResult] = useState();
   const [tracks, setTracks] = useState([]);
-
-  const playPlaylistSongs = () => {};
 
   useEffect(() => {
     console.log("id", id);
@@ -86,9 +83,7 @@ const ArtistPlaylist = () => {
               </div>
             </div>
           </div>
-          <div className={stylesPlaylist.icons}>
-         
-          </div>
+          <div className={stylesPlaylist.icons}></div>
         </>
       )}
 

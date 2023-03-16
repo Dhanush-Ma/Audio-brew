@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import genralStyles from "../Styles/Preferences.module.css";
 import styles from "../Styles/ArtistsPreferences.module.css";
-
+import getAuthorizationCode from "../Utilities/getAuthorizationCode";
 import artists from "../Utilities/artists";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-import baseURL from "../Utilities/baseURL"
+import baseURL from "../Utilities/baseURL";
 const Artist = ({ artist, handleClick }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const addPreferences = (id, name, url) => {
     setIsSelected(!isSelected);
     if (isSelected) {
-      handleClick((prev) => prev.filter((item) => item.id != id));
+      handleClick((prev) => prev.filter((item) => item.id !== id));
     } else {
       handleClick((prev) => [...prev, { id, name, url }]);
     }
@@ -26,7 +26,7 @@ const Artist = ({ artist, handleClick }) => {
       }
     >
       <div className={styles.imgContainer}>
-        <img src={artist.images[0].url} alt={`Picture of ${artist.name} `} />
+        <img src={artist.images[0].url} alt={`${artist.name} `} />
       </div>
       <p>{artist.name}</p>
     </div>
@@ -80,7 +80,9 @@ const ArtistsPreferences = () => {
     })
       .then((data) => {
         console.log(data);
-        navigate("/me");
+        getAuthorizationCode()
+        //navigate("/me");
+
       })
       .catch((err) => {
         console.log(err);

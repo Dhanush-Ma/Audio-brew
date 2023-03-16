@@ -1,4 +1,4 @@
-export default {
+const artists = {
   artists: [
     {
       external_urls: {
@@ -2658,3 +2658,5 @@ export default {
     },
   ],
 };
+
+export default artists;

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import styles from "../Styles/Register.module.css";
 import { FaInfoCircle } from "react-icons/fa";
 import axios from "axios";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import BackgroundFlow from "../Utilities/BackgroundFlow";
 import baseURL from "../Utilities/baseURL";
-
+import getAuthorizationCode from "../Utilities/getAuthorizationCode";
 import logo from "../Assets/logo.png";
 const Register = () => {
   const EMAIL_REGEX =
@@ -17,18 +17,8 @@ const Register = () => {
   const [validData, setValidData] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const { email, password } = formData;
-  const navigate = useNavigate();
 
-  //Authorization Code
-  function getAuthorizationCode() {
-    const AUTH_URL =
-      "https://accounts.spotify.com/authorize?client_id=42f83ce8dd584b0c992bad52d9c08b02&response_type=code&redirect_uri=https://audiobrew.onrender.com/me&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
-    window.location = AUTH_URL;
-
-    const code = new URLSearchParams(window.location.search).get("code");
-    console.log(code);
-  }
 
   useEffect(() => {
     if (password && EMAIL_REGEX.test(email)) {
@@ -57,7 +47,6 @@ const Register = () => {
         localStorage.setItem("token", data.data);
         getAuthorizationCode();
 
-        // navigate("/me");
       })
       .catch((err) => {
         console.log(err);

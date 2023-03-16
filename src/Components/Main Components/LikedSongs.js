@@ -1,26 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../../Context/Context";
-import { Link, useNavigate } from "react-router-dom";
-import Axios from "axios";
+import { Link } from "react-router-dom";
 import SongDisplay from "../Utility Components/SongDisplay";
 import styles from "../../Styles/Search.module.css";
 import stylesPlaylist from "../../Styles/Playlist.module.css";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FcLike } from "react-icons/fc";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 import getDuration from "../../Utilities/getDuration";
 
 const LikedSongs = () => {
   const {
-    user,
     userLikedSongs,
-    setUserLikedSongs,
     accessToken,
-    setMountModal,
   } = useContext(Context);
   console.log(userLikedSongs);
   const [result, setResult] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,8 +33,7 @@ const LikedSongs = () => {
     };
 
     userLikedSongs && fetchData();
-  }, [userLikedSongs]);
-  const playLikedSongs = () => {};
+  }, [userLikedSongs,accessToken]);
 
   return (
     <>

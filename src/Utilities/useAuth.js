@@ -1,10 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import Axios from "axios";
 import { Context } from "../Context/Context";
 import baseURL from "./baseURL";
 export default function useAuth() {
   const {
-    accessToken,
     setAccessToken,
     refreshToken,
     setRefreshToken,

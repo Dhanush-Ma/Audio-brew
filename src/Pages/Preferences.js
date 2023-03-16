@@ -11,7 +11,7 @@ const Genre = ({ genre, handleClick }) => {
   const addPreferences = (genre) => {
     setIsSelected(!isSelected);
     if (isSelected) {
-      handleClick((prev) => prev.filter((item) => item != genre));
+      handleClick((prev) => prev.filter((item) => item !== genre));
     } else {
       handleClick((prev) => [...prev, genre]);
     }

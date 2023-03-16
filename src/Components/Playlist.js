@@ -7,7 +7,6 @@ import styles from "../Styles/Search.module.css";
 import stylesPlaylist from "../Styles/Playlist.module.css";
 import { AiOutlineClockCircle, AiFillDelete } from "react-icons/ai";
 import { RiPlayList2Fill } from "react-icons/ri";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 import getDuration from "../Utilities/getDuration";
 import baseURL from "../Utilities/baseURL";
 
@@ -39,7 +38,6 @@ const Playlist = () => {
         console.log(err);
       });
   };
-  const playPlaylistSongs = () => {};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +56,7 @@ const Playlist = () => {
     };
 
     currentPlaylist && fetchData();
-  }, [currentPlaylist]);
+  }, [currentPlaylist, accessToken]);
 
   return (
     <>

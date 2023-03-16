@@ -8,11 +8,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 
 const Profile = () => {
-  const { user, accessToken } = useContext(Context);
+  const { user } = useContext(Context);
   const [showDropdownMenu, setShowDropdownMenu] = useState(false);
   const navigate = useNavigate();
   function logout() {
-    localStorage.removeItem("token");
+    localStorage.clear()
     navigate("/home");
   }
 

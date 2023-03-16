@@ -4,7 +4,6 @@ import useWindowDimensions from "../Utilities/useWindowDimensions";
 import { Context } from "../Context/Context";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
-import { VscLibrary } from "react-icons/vsc";
 import { GoDiffAdded } from "react-icons/go";
 import { FcLike } from "react-icons/fc";
 import { Scrollbars } from "react-custom-scrollbars-2";
@@ -16,7 +15,7 @@ import baseURL from "../Utilities/baseURL";
 const OptionNav = () => {
   const { userPlaylists, setUserPlaylists, user, setUserLikedSongs } =
     useContext(Context);
-  const { height, width } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
   useEffect(() => {
     Axios({

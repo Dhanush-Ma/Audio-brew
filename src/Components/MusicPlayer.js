@@ -4,10 +4,6 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { HiSpeakerWave } from "react-icons/hi2";
 import { BsPauseCircle } from "react-icons/bs";
 import { BsPlayCircle } from "react-icons/bs";
-import { BiSkipNext } from "react-icons/bi";
-import { BiSkipPrevious } from "react-icons/bi";
-import { BiShuffle } from "react-icons/bi";
-import { BiRepeat } from "react-icons/bi";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { Context } from "../Context/Context";
 import axios from "axios";
@@ -24,10 +20,6 @@ const MusicPlayer = () => {
     setUserLikedSongs,
     user,
   } = useContext(Context);
-  const [is_paused, setPaused] = useState(false);
-  const [is_active, setActive] = useState(false);
-  const [current_track, setTrack] = useState();
-  const [player, setPlayer] = useState(undefined);
   const [deviceID, setDeviceID] = useState();
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(100);
@@ -64,7 +56,6 @@ const MusicPlayer = () => {
         .then((res) => {
           console.log(res);
           setCurrentSongDetails(res.data);
-          setTrack(res.data);
           setTrackTimer(0);
           pauseTrack();
         })
@@ -88,8 +79,6 @@ const MusicPlayer = () => {
         volume: 1,
       });
 
-      setPlayer(player);
-
       player.addListener("ready", ({ device_id }) => {
         setDeviceID(device_id);
         console.log("Ready with Device ID", device_id);
@@ -106,12 +95,6 @@ const MusicPlayer = () => {
           return;
         }
         console.log(state);
-        setTrack(state.track_window.current_track);
-        setPaused(state.paused);
-
-        // player.getCurrentState().then((state) => {
-        //   !state ? setActive(false) : setActive(true);
-        // });
       });
     };
   }, [currentSongID, userLikedSongs]);

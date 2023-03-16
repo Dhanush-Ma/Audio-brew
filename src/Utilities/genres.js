@@ -1,4 +1,4 @@
-export default {
+const genres = {
   genres: [
     "acoustic",
     "afrobeat",
@@ -126,3 +126,5 @@ export default {
     "world-music",
   ],
 };
+
+export default genres;

@@ -7,7 +7,7 @@ import styles from "../../Styles/FeaturedPlaylistsInfo.module.css";
 
 const FeaturedPlaylistsInfo = () => {
   const { id } = useParams();
-  const { user, accessToken } = useContext(Context);
+  const { accessToken } = useContext(Context);
   const [result, setResult] = useState([]);
   useEffect(() => {
     Axios({
