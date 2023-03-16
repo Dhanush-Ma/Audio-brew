@@ -1,2 +1,2 @@
-const baseURL = "http://localhost:5000";
+const baseURL = "https://audiobrew-api.onrender.com";
 export default baseURL;
