@@ -1,0 +1,47 @@
+.profileCardContainer{
+    width: 210px;
+    height: 285px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.profileCardContainer:hover{
+    background-color: #333333;
+    cursor: pointer;
+
+}
+
+.imgContainer{
+    width: 194px;
+    height: 194px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #545454;
+    border-radius: 5px;
+}
+
+.imgContainer > *{
+    width:60%;
+    height: 60%;
+}
+
+.infoContainer{
+    align-self: flex-start;
+    margin-left: 10px;
+}
+.name{
+    font-size: 1.3rem;
+}
+.songs,.userInfo{
+    font-size: 0.8rem;
+    color: #cccccc;
+}
+

@@ -1,0 +1,12 @@
+.main{
+    background: rgb(98,98,98);
+    background: linear-gradient(90deg, rgba(98,98,98,1) 0%, rgba(0,0,0,1) 100%);
+    position: fixed;
+    left: 200px;
+    bottom: 90px;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.main p {
+}

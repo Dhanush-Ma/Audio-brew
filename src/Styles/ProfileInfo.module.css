@@ -1,0 +1,27 @@
+.profileInfoContainer{
+    margin: 1rem 0;
+}
+
+.title{
+    font-size: 1.5rem;
+}
+.profileInfo{
+    margin-top: 1rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.details > p{
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.profileLibrary{
+    margin-top: 1rem;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, 210px);
+    row-gap: 2rem;
+    column-gap: 4rem;
+}

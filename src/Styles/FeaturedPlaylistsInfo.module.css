@@ -1,0 +1,9 @@
+.container{
+    margin: 1.5rem 0;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, 210px);
+    row-gap: 2rem;
+    column-gap: 4rem;
+    justify-content: center;
+}

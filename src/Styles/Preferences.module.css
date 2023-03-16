@@ -1,0 +1,65 @@
+.container{
+    background-color: #121212;
+    color: #fff;
+    position: relative;
+}
+.preferencesContainer{
+    max-width: 1200px;
+    margin: 0rem auto;
+    padding: 2rem 0;
+    text-align: center;
+    width: 90%;
+}
+.genreContainer{
+    margin-top: 1rem;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, 140px);
+    row-gap: 1rem;
+    column-gap: 1rem;
+    height: max-content;
+    justify-content: center;
+}
+
+.genre{
+    width: 140px;
+    text-transform: capitalize;
+    background-color: #353535;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.selectedGenre{
+        width: 140px;
+    text-transform: capitalize;
+    background-color: #232323;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.selectIcon{
+    color: #1df549;
+    font-size: 1.2rem;
+    position: absolute;
+    top: -5px;
+    right: 0;
+}
+
+.preferencesContainer button{
+    background-color: #1df549;
+    border: none;
+    color: #121212;
+    font-family: inherit;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.preferencesContainer button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}

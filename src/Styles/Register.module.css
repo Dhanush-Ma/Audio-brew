@@ -1,0 +1,117 @@
+.register_container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1ed760;
+    z-index: 50;
+    position: absolute;
+    top:0;
+    width: 100vw;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-block: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="submit"]{
+    border: none;
+    border-radius: 0.2rem;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"]
+{
+    padding: 0.8rem 0.6rem;
+    font-family: inherit;
+    width: 300px;
+    background-color: inherit;
+    outline: none;
+    border: 2px solid #1ed760;
+    color: #fff;
+    background-color: transparent;
+    
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #191919 inset !important;
+
+        -webkit-text-fill-color: #fff !important;
+
+}
+
+form input[type="submit"]{
+    padding: 0.6rem;
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: #1ed760;
+    color: #fff;
+}
+
+form input[type="submit"]:disabled{
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.errMsg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: #FF0000;
+    color: #f0f0f0;
+    border-radius: 2px;
+}
+
+.info{
+    color: #191919;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.inputBox{
+    position: relative;
+}
+
+form label{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ label,
+.inputBox input:focus ~ label{
+    transform: translateX(6px) translateY(-20px);
+    background-color: #191919;
+    padding: 0rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.logo img{
+    width: 200px;
+    margin-bottom: 1rem;
+}

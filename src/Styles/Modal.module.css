@@ -1,0 +1,11 @@
+.modal{
+    background-color:#1DA1F2 ;
+    width: max-content;
+    padding:0.5rem 1rem;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s linear;
+}
