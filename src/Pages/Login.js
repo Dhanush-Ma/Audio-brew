@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import BackgroundFlow from "../Utilities/BackgroundFlow";
 import baseURL from "../Utilities/baseURL";
 
-import logo from "../Assets/logo.png"
+import logo from "../Assets/logo.png";
 const Register = () => {
   const EMAIL_REGEX =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -22,7 +22,7 @@ const Register = () => {
   //Authorization Code
   function getAuthorizationCode() {
     const AUTH_URL =
-      "https://accounts.spotify.com/authorize?client_id=42f83ce8dd584b0c992bad52d9c08b02&response_type=code&redirect_uri=http://localhost:3000/me&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
+      "https://accounts.spotify.com/authorize?client_id=42f83ce8dd584b0c992bad52d9c08b02&response_type=code&redirect_uri=https://audiobrew.onrender.com/me&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
     window.location = AUTH_URL;
 
