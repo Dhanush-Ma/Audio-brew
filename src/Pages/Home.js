@@ -39,7 +39,6 @@ const Home = () => {
 
         setCode(new URLSearchParams(window.location.search).get("code"));
         window.history.pushState({}, null, "/");
-        //Get Token from Backend
       })
       .catch((err) => {
         console.log(err);
