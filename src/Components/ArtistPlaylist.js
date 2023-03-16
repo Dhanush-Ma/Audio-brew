@@ -32,10 +32,10 @@ const ArtistPlaylist = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [accessToken, id]);
 
   useEffect(() => {
-    if (tracks.length == 0) return;
+    if (tracks.length === 0) return;
     const tracksStrings = tracks.join("%2C");
     Axios({
       method: "get",
@@ -51,7 +51,7 @@ const ArtistPlaylist = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [tracks]);
+  }, [tracks,accessToken]);
 
   console.log(result);
 

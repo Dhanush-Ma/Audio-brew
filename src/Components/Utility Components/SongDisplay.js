@@ -161,7 +161,7 @@ const SongDisplay = (props) => {
                   </li>
                 )}
                 {userLikedSongs.tracks.find(
-                  (track) => track == currentSongID
+                  (track) => track === currentSongID
                 ) ? (
                   <li onClick={() => removeFromLikedSongs(props.id)}>
                     Remove from list

@@ -54,7 +54,7 @@ const CreatePlaylist = () => {
           </div>
           <div className={styles.imgContainer}>
             {file ? (
-              <img className={styles.playlistImg} src={file} />
+              <img className={styles.playlistImg} src={file} alt="icon" />
             ) : (
               <RiPlayList2Fill className={styles.playlistIcon} />
             )}

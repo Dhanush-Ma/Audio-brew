@@ -127,7 +127,7 @@ const MusicPlayer = () => {
   const changeTrackSeek = async (parameter) => {
     try {
       console.log(parameter);
-      const response = await fetch(
+       await fetch(
         `https://api.spotify.com/v1/me/player/seek?position_ms=${parameter}&device_id=${deviceID}`,
         {
           method: "PUT",
@@ -145,7 +145,7 @@ const MusicPlayer = () => {
 
   const playTrack = async () => {
     setIsPlaying(true);
-    const response = await axios.put(
+    await axios.put(
       `https://api.spotify.com/v1/me/player/play?device_id=${deviceID}`,
       {
         uris: [`spotify:track:${currentSongID}`],
@@ -163,7 +163,7 @@ const MusicPlayer = () => {
 
   const pauseTrack = async () => {
     setIsPlaying(false);
-    const response = await axios.put(
+    await axios.put(
       `https://api.spotify.com/v1/me/player/pause?device_id=${deviceID}`,
       {
         uris: [`spotify:track:${currentSongID}`],

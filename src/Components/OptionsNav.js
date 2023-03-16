@@ -47,7 +47,7 @@ const OptionNav = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [user]);
+  }, [user, setUserPlaylists,setUserLikedSongs]);
 
   let renderCustomHorizontalThumb = ({ style, ...props }) => {
     const thumbStyle = {
