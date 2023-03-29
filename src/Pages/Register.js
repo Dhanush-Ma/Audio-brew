@@ -6,6 +6,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import BackgroundFlow from "../Utilities/BackgroundFlow";
 import baseURL from "../Utilities/baseURL";
+import LoadingIndicator from "../Utilities/loadingIndicator";
 
 const Register = () => {
   const EMAIL_REGEX =
@@ -19,6 +20,7 @@ const Register = () => {
   const [validData, setValidData] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const { username, email, password } = formData;
+  const [loading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (username && password && EMAIL_REGEX.test(email)) {
@@ -39,16 +41,20 @@ const Register = () => {
 
   const handleFormData = (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     axios
       .post(baseURL + "/register", formData)
       .then((data) => {
+        setIsLoading(false);
+
         setErrMsg("");
         console.log(data);
         localStorage.setItem("token", data.data);
         navigate("/preferences/genre");
       })
       .catch((err) => {
+        setIsLoading(false);
+
         if (err.response.status === 409) {
           setErrMsg(err.response.data);
         } else if (err.response.status === 500 || 404) {
@@ -111,7 +117,13 @@ const Register = () => {
               Password
             </label>
           </div>
-          <input type="submit" value="SIGN UP" disabled={!validData} />
+          {loading ? (
+            <LoadingIndicator />
+          ) : (
+            <button className={styles.button} disabled={!validData}>
+              SIGN UP
+            </button>
+          )}
         </form>
         <p>
           Already have an account?{" "}

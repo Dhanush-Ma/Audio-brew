@@ -22,7 +22,7 @@ form{
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
-form input[type="submit"]{
+form .button{
     border: none;
     border-radius: 0.2rem;
     display: block;
@@ -60,7 +60,7 @@ input:-webkit-autofill:active{
 
 }
 
-form input[type="submit"]{
+form .button{
     padding: 0.6rem;
     font-family: inherit;
     font-weight: bold;
@@ -70,13 +70,13 @@ form input[type="submit"]{
     color: #fff;
 }
 
-form input[type="submit"]:disabled,
-form input[type="submit"]:disabled:hover{
+form .button:disabled,
+form .button:disabled:hover{
     opacity: 0.3;
     cursor: not-allowed;
 }
 
-form input[type="submit"]:hover{
+form .button:hover{
     opacity: 0.9;
 }
 
@@ -135,3 +135,45 @@ form label{
     width: 200px;
     margin-bottom: 1rem;
 }
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin:  auto;
+  font-size: 5px;
+  position: relative;
+  border-top: 1.3em solid #6e6e6e;
+  border-right: 1.3em solid #6e6e6e;
+  border-bottom: 1.3em solid #6e6e6e;
+  border-left: 1.3em solid #14F549;
+  /* -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); */
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

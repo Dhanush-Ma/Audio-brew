@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Register.module.css";
-import { FaInfoCircle } from "react-icons/fa";
+import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import BackgroundFlow from "../Utilities/BackgroundFlow";
 import baseURL from "../Utilities/baseURL";
 import getAuthorizationCode from "../Utilities/getAuthorizationCode";
+import LoadingIndicator from "../Utilities/loadingIndicator";
 import logo from "../Assets/logo.png";
 const Register = () => {
   const EMAIL_REGEX =
@@ -17,8 +18,7 @@ const Register = () => {
   const [validData, setValidData] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const { email, password } = formData;
-
-
+  const [loading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (password && EMAIL_REGEX.test(email)) {
@@ -27,7 +27,6 @@ const Register = () => {
       setValidData(false);
     }
   }, [email, password]);
-
   const onChange = (e) => {
     setFormData((prev) => {
       return {
@@ -39,16 +38,17 @@ const Register = () => {
 
   const handleFormData = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     axios
       .post(baseURL, formData)
       .then((data) => {
         setErrMsg("");
-        // console.log(data.data);
+        setIsLoading(false);
         localStorage.setItem("token", data.data);
         getAuthorizationCode();
-
       })
       .catch((err) => {
+        setIsLoading(false);
         console.log(err);
         if (err.response.status === 400) {
           setErrMsg(err.response.data);
@@ -72,7 +72,7 @@ const Register = () => {
         <form onSubmit={handleFormData}>
           {errMsg && (
             <p className={styles.errMsg}>
-              <FaInfoCircle className={styles.info} />
+              <AiFillWarning color="#fff" className={styles.info} />
               {` ${errMsg}`}
             </p>
           )}
@@ -104,7 +104,13 @@ const Register = () => {
               Password
             </label>
           </div>
-          <input type="submit" value="SIGN UP" disabled={!validData} />
+          {loading ? (
+            <LoadingIndicator />
+          ) : (
+            <button className={styles.button} disabled={!validData}>
+              LOG IN
+            </button>
+          )}
         </form>
         <p>
           Don't have an account? No Worries{" "}
