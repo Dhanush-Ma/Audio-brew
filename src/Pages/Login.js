@@ -66,6 +66,7 @@ const Register = () => {
       <div className={styles.register_container}>
         <div className={styles.logo}>
           <img src={logo} alt="Audio Brew"></img>
+          <h1>Login to continuie Exploring</h1>
         </div>
 
         <form onSubmit={handleFormData}>

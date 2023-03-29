@@ -89,5 +89,9 @@
     width: 20rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: all 0.15s linear;
 }
 
+.button:hover{
+        background-color: #14f549;
+}

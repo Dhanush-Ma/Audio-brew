@@ -73,13 +73,20 @@
 .userInfo{
     text-align: center;
     font-size: 2rem;
-    height: 45vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    height: 58vh;
 }
 
 .link{
     color: #1df549;
     margin-left: 10px;
+}
+
+.playListBox{
+    display: flex;
+    gap: 35px;
+    width: 60vw;
 }

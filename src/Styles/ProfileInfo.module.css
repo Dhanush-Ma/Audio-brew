@@ -2,8 +2,19 @@
     margin: 1rem 0;
 }
 
+.profileContainer h1{
+     background: -webkit-linear-gradient(left,#14f549, #055005);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .title{
     font-size: 1.5rem;
+    background-color: #14f549;
+    width: max-content;
+    padding: 0.4rem 0.6rem;
+    border-radius: 5px;
+    color: black;
 }
 .profileInfo{
     margin-top: 1rem;
@@ -13,7 +24,7 @@
 
 .details > p{
     padding-bottom: 0.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     font-size: 1.2rem;
 }
 

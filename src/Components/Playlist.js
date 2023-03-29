@@ -70,30 +70,32 @@ const Playlist = () => {
               <p className={stylesPlaylist.playlistName}>
                 {currentPlaylist.name}
               </p>
-              <div>
-                <p className={stylesPlaylist.playlistDate}>
-                  {`Date created: 
+              <div className={stylesPlaylist.playListBox}>
+                <div>
+                  <p className={stylesPlaylist.playlistDate}>
+                    {`Date created: 
              ${new Date(currentPlaylist.createdAt).toLocaleDateString(
                "en-GB"
              )}`}
-                </p>
+                  </p>
 
-                <p className={stylesPlaylist.playlistTracksDetails}>
-                  {`${currentPlaylist.tracks.length} songs `} &#183;{" "}
-                  {getDuration(
-                    result.reduce((acc, cur) => {
-                      return acc + cur.duration_ms;
-                    }, 0)
-                  )
-                    .split(":")
-                    .join(" mins ")}{" "}
-                  secs
-                </p>
+                  <p className={stylesPlaylist.playlistTracksDetails}>
+                    {`${currentPlaylist.tracks.length} songs `} &#183;{" "}
+                    {getDuration(
+                      result.reduce((acc, cur) => {
+                        return acc + cur.duration_ms;
+                      }, 0)
+                    )
+                      .split(":")
+                      .join(" mins ")}{" "}
+                    secs
+                  </p>
+                </div>
+                <div className={stylesPlaylist.icons}>
+                  <AiFillDelete color="#d11a2a" onClick={deletePlaylist} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className={stylesPlaylist.icons}>
-            <AiFillDelete color="#d11a2a" onClick={deletePlaylist} />
           </div>
         </>
       )}

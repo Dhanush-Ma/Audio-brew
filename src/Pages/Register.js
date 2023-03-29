@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Register.module.css";
-import { FaInfoCircle } from "react-icons/fa";
+import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 import logo from "../Assets/logo.png";
@@ -63,12 +63,13 @@ const Register = () => {
       <div className={styles.register_container}>
         <div className={styles.logo}>
           <img src={logo} alt="Audio Brew"></img>
+          <h1>Craete an account to Explore Music</h1>
         </div>
 
         <form onSubmit={handleFormData}>
           {errMsg && (
             <p className={styles.errMsg}>
-              <FaInfoCircle className={styles.info} />
+              <AiFillWarning color="#fff" className={styles.info} />
               {` ${errMsg}`}
             </p>
           )}

@@ -3,9 +3,10 @@
     width: max-content;
     padding:0.5rem 1rem;
     border-radius: 20px;
-    position: fixed;
     bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed;
+    left: calc(50% + 100px);
+    transform: translate(-50%, 0);
     transition: all 0.5s linear;
+    z-index: 400;
 }

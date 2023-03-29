@@ -18,16 +18,11 @@ function Modal(props) {
 
   if (showModal) {
     return (
-      <CSSTransition
-        in={showModal}
-        timeout={300}
-        classNames={styles.modal}
-        unmountOnExit
-      >
+      <div className={styles.mainModalConatiner}>
         <div className={styles.modal}>
           <p>{props.content}</p>
         </div>
-      </CSSTransition>
+      </div>
     );
   } else {
     return null;

@@ -105,9 +105,6 @@ const MusicPlayer = () => {
     });
   };
 
-  useEffect(() => {
-    changeVolume(volume);
-  }, [volume]);
   const changeVolume = async (parameter) => {
     try {
       console.log(parameter);
